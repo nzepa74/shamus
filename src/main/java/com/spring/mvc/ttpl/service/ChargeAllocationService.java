@@ -37,6 +37,7 @@ public class ChargeAllocationService {
     public ResponseMessage getChargeList() {
         ResponseMessage responseMessage = new ResponseMessage();
         List<ChargeAllocationDTO> chargeAllocationDTOs = chargeAllocationDao.getChargeList();
+
         if (chargeAllocationDTOs != null) {
             responseMessage.setResponseStatus(SystemDataInt.MESSAGE_STATUS_SUCCESSFUL.value());
             responseMessage.setResponseDTO(chargeAllocationDTOs);
@@ -62,11 +63,11 @@ public class ChargeAllocationService {
                 responseMessage.setResponseText("Charge for " + documentName + " under " + serviceName + " is already saved.");
                 return responseMessage;
             }
-            Integer LastServiceChargeId = chargeAllocationDao.getLastServiceChargeId();
-            if (LastServiceChargeId == null) {
-                LastServiceChargeId = 1;
+            Integer lastServiceChargeId = chargeAllocationDao.getLastServiceChargeId();
+            if (lastServiceChargeId == null) {
+                lastServiceChargeId = 1;
             }
-            chargeAllocationDTO.setServiceChargeId(LastServiceChargeId + 1);
+            chargeAllocationDTO.setServiceChargeId(lastServiceChargeId + 1);
             ChargeAllocation chargeAllocation = convertDtoToEntity(currentUser, chargeAllocationDTO);
             chargeAllocationDao.saveChargeAllocation(chargeAllocation);
             responseMessage.setResponseStatus(SystemDataInt.MESSAGE_STATUS_SUCCESSFUL.value());
@@ -75,7 +76,6 @@ public class ChargeAllocationService {
             ChargeAllocationDTO chargeAllocationDetailDTO = chargeAllocationDao.getChargeDetail(serviceChargeId);
             chargeAllocationDTO.setServiceId(chargeAllocationDetailDTO.getServiceId());
             chargeAllocationDTO.setDocumentId(chargeAllocationDetailDTO.getDocumentId());
-
             ChargeAllocation chargeAllocation = convertDtoToEntity(currentUser, chargeAllocationDTO);
             chargeAllocationDao.saveChargeAllocation(chargeAllocation);
             responseMessage.setResponseStatus(SystemDataInt.MESSAGE_STATUS_SUCCESSFUL.value());

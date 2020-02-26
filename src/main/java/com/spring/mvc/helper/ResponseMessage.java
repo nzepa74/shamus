@@ -1,8 +1,6 @@
 package com.spring.mvc.helper;
 
-/**
- * Created by N-Zepa on 17-Jun-18.
- */
+
 public class ResponseMessage {
     //region private variables
     private Integer responseStatus;

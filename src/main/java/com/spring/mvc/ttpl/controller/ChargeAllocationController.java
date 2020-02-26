@@ -1,10 +1,10 @@
 package com.spring.mvc.ttpl.controller;
 
-import com.spring.mvc.ttpl.dto.ChargeAllocationDTO;
-import com.spring.mvc.ttpl.service.ChargeAllocationService;
 import com.spring.mvc.helper.CurrentUser;
 import com.spring.mvc.helper.DropdownDTO;
 import com.spring.mvc.helper.ResponseMessage;
+import com.spring.mvc.ttpl.dto.ChargeAllocationDTO;
+import com.spring.mvc.ttpl.service.ChargeAllocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,6 +19,7 @@ import java.util.List;
 /**
  * Created by USER on 9/4/2019.
  */
+
 @Controller
 @RequestMapping("/chargeAllocation")
 public class ChargeAllocationController {
@@ -35,13 +36,18 @@ public class ChargeAllocationController {
         return "ttpl/chargeAllocation";
     }
 
-
+    /**
+     * to get charge list
+     * @return -- ResponseMessage
+     * @throws Exception
+     */
     @ResponseBody
     @RequestMapping(value = "/getChargeList", method = RequestMethod.GET)
     public ResponseMessage getChargeList() throws Exception {
         responseMessage = chargeAllocationService.getChargeList();
         return responseMessage;
     }
+
     @ResponseBody
     @RequestMapping(value = "/saveChargeAllocation", method = RequestMethod.POST)
     public ResponseMessage saveChargeAllocation(HttpServletRequest request, HttpServletResponse response,
@@ -51,4 +57,5 @@ public class ChargeAllocationController {
         responseMessage = chargeAllocationService.saveChargeAllocation(currentUser, chargeAllocationDTO);
         return responseMessage;
     }
+
 }

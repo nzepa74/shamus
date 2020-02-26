@@ -1,5 +1,6 @@
 package com.spring.mvc.ttpl.dao;
 
+import com.spring.mvc.ttpl.entity.TaxPayerRegistrationEntity;
 import org.hibernate.Session;
 import org.hibernate.transform.Transformers;
 import org.springframework.transaction.annotation.Transactional;

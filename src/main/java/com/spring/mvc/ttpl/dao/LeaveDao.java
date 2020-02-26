@@ -23,4 +23,10 @@ public class LeaveDao extends BaseDao {
         hQuery.setParameter("aName", applicantName);
         return (LeaveDTO) hQuery.uniqueResult();
     }
+
+    /**
+     * Created by nzepa on 2/17/2020.
+     */
+    public static class ItemRegistrationDao {
+    }
 }

@@ -27,6 +27,22 @@
                         <a href="/search" class="nav-link" style="color:black"> <strong><i
                                 class="fe fe-search"></i>Search</strong></a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/itemRegistration" class="nav-link" style="color:black"> <strong><i
+                                class="fe fe-search"></i>Item Registration</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/delivery" class="nav-link" style="color:black"> <strong><i
+                                class="fe fe-search"></i>Delivery</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/searchDelivery" class="nav-link" style="color:black"> <strong><i
+                                class="fe fe-search"></i>Search Delivery</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/taxPayerRegistration" class="nav-link" style="color:black"> <strong><i
+                                class="fe fe-search"></i>Regsiter</strong></a>
+                    </li>
                 </ul>
             </div>
         </div>

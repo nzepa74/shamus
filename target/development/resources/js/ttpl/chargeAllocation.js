@@ -95,7 +95,7 @@ chargeAllocation = (function () {
 
     function getChargeList() {
         var url = _baseURL() + 'getChargeList';
-        $.ajax({
+            $.ajax({
             url: url,
             type: 'GET',
             success: function (res) {
@@ -122,6 +122,8 @@ chargeAllocation = (function () {
                             }
                         }
                     ];
+
+
                     $('#chargeListTableId').DataTable({
                         data: data
                         , columns: dataTableDefinition

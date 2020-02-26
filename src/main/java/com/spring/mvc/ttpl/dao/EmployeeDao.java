@@ -8,10 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
  * Created by nzepa on 2/5/2020.
  */
 @Repository
-public class EmployeeDao extends BaseDao{
+public class EmployeeDao extends BaseDao {
 
     @Transactional(value = "txManager", rollbackFor = Exception.class)
-    public void saveEmployee(EmployeeEntity employeeEntity ) {
+    public void saveEmployee(EmployeeEntity employeeEntity) {
         em.persist(employeeEntity);
     }
 
